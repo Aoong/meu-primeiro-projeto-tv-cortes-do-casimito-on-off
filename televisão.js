@@ -1,24 +1,22 @@
 const turnOn = document.getElementById ( 'turnOn' );
 const turnOff = document.getElementById ( 'turnOff' );
 const lamp = document.getElementById ( 'lamp' );
-
-function isLampBroken () {
-    return lamp.src.indexOf ( 'quebrada' ) > -1
-}
+let notBroken = true;
 
 function lampOn () {
-    if ( !isLampBroken () ) {
+    if ( notBroken  ) {
         lamp.src = './img/tvligada.jpg';
     }
 }
 
 function lampOff () {
-    if ( !isLampBroken () ) {
+    if ( notBroken ) {
         lamp.src = './img/tvdesligada.jpg';
     }
 }
 
 function lampBroken () {
+    notBroken = false;
     lamp.src = './img/tvquebrada.jpg';
 }
 
